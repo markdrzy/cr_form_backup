@@ -17,6 +17,9 @@ class Cr_form_backup {
 			include_once PATH_THIRD .'omnilog/classes/omnilogger' .EXT;
 		}
 		
+		// Load the custom CSS
+		$this->EE->cp->add_to_head(PATH_THIRD.'cr_form_backup/css/style.css');
+		
 		/*
 		// Grab settings from the MetaMod Table
 		$r = $this->EE->db->query("SELECT `mod_settings` FROM `{$this->EE->db->dbprefix}cr_module_meta` 
@@ -27,12 +30,6 @@ class Cr_form_backup {
 			{
 				$this->settings = unserialize($row['mod_settings']);
 			}
-		}
-		
-		// Should Reports Use Cache?
-		if ( isset($this->settings['cache']['last_updated']) && $this->settings['cache']['last_updated'] < (time() - 8640))
-		{
-			$this->report_cache = TRUE;
 		}
 		*/
 	}
