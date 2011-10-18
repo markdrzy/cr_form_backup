@@ -18,7 +18,7 @@ class Cr_form_backup {
 		}
 		
 		// Load the custom CSS
-		$this->EE->cp->add_to_head(PATH_THIRD.'cr_form_backup/css/style.css');
+		$this->EE->cp->add_to_head('<link rel="stylesheet" src="/'.SYSDIR.'/expressionengine/third_party/cr_form_backup/css/style.css">');
 		
 		/*
 		// Grab settings from the MetaMod Table
