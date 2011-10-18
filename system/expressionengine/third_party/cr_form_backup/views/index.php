@@ -49,7 +49,7 @@ $ylist .= '	<option value="'.$i.'">'.$i.'</option>';
 
 $this->table->set_template(array('table_open'=>'<table id="form-list" cellspacing="0" cellpadding="0">'));
 $this->table->set_heading(
-	'Form','Start Date','End Date','',''
+	'Form','Start Date','End Date','Download',''
 );
 foreach ($forms as $f)
 {
@@ -59,8 +59,8 @@ foreach ($forms as $f)
 			.'<select name="sy" id="sy-'.$f.'" class="'.$f.'">'.$ylist.'</select>',
 		'<select name="em" id="em-'.$f.'" class="'.$f.'">'.$mlist.'</select> '
 			.'<select name="ey" id="ey-'.$f.'" class="'.$f.'">'.$ylist.'</select>',
-		'<button id="dl-'.$f.'" class="'.$f.'">Download</button>',
-		'<button id="dla-'.$f.'" class="'.$f.'">Download All</button>'
+		'<button id="dl-'.$f.'" class="'.$f.'">Range: </button>',
+		'<button id="dla-'.$f.'" class="'.$f.'">All Records</button>'
 	);
 }
 

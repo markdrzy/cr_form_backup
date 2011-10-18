@@ -134,8 +134,24 @@ EOD;
 			$m = date('m');
 			$js = <<< EOD
 			
+				function rangeLabel(c) {
+					var sm = $('#form-list select.'+c+'[name=sm]').val();
+					var sy = $('#form-list select.'+c+'[name=sy]').val().substr(2,2);
+					var em = $('#form-list select.'+c+'[name=em]').val();
+					var ey = $('#form-list select.'+c+'[name=ey]').val().substr(2,2);
+					$('#form-list button#dl-'+c).text('Range: '+sm+'/'+sy+' - '+em+'/'+ey);
+				}
+			
 				$('#form-list select[name=ey] option[value={$y}]').attr('selected','selected');
 				$('#form-list select[name=em] option[value={$m}]').attr('selected','selected');
+				
+				$('#form-list select[name=ey]').each(function(){
+					rangeLabel($(this).attr('class'));
+				});
+				
+				$('#form-list select').change(function(){
+					rangeLabel($(this).attr('class'));
+				});
 			
 				$('#form-list button').click(function(){
 					var act = $(this).attr('id');
@@ -149,7 +165,7 @@ EOD;
 							var sdo = sd,sd = ed,ed = sdo;
 						}
 					}
-					console.log([act,frm,'dla-'+frm,mth,sd,ed]);
+					// console.log([act,frm,'dla-'+frm,mth,sd,ed]);
 					
 					var dl_url = '{$b}{$a}C=addons_modules{$a}M=show_module_cp{$a}'
 									+'module={$this->modname}{$a}method=download_data{$a}'
