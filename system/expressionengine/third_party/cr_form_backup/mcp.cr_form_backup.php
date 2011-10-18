@@ -21,6 +21,9 @@ class Cr_form_backup_mcp {
 	{
 		$this->EE->load->library('table');
 		
+		// Load the custom CSS
+		$this->EE->cp->add_to_head('<link rel="stylesheet" href="/'.SYSDIR.'/expressionengine/third_party/cr_form_backup/css/style.css">');
+		
 		// Get Form Types
 		$r = $this->EE->db->query("SELECT `action` FROM `{$this->EE->db->dbprefix}{$this->short_modname}` 
 									GROUP BY `action`;");
@@ -173,7 +176,7 @@ EOD;
 			
 		} else {
 		
-			return TRUE;
+			return $this->EE->load->view('index-empty', $vars, TRUE);
 		
 		}
 	}

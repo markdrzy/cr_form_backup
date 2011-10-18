@@ -2,7 +2,7 @@
 
 
 // Stats Table
-$stats_table = '<table id="form-stats">';
+$stats_table = '<table id="form-stats" cellpadding="0" cellspacing="0">';
 foreach ($report_data as $act => $act_data)
 {
 	$stats_table .= '<tr class="form-head"><th colspan="13">Form: '.$act.'</th></tr>';
@@ -47,9 +47,9 @@ for ($i = $report_start_year;$i <= date('Y');$i++)
 $ylist .= '	<option value="'.$i.'">'.$i.'</option>';
 }
 
-$this->table->set_template(array('table_open'=>'<table id="form-list">'));
+$this->table->set_template(array('table_open'=>'<table id="form-list" cellspacing="0" cellpadding="0">'));
 $this->table->set_heading(
-	'Form','Start Date','End Date',''
+	'Form','Start Date','End Date','',''
 );
 foreach ($forms as $f)
 {
@@ -69,5 +69,8 @@ $this->table->clear();
 
 ?>
 <!-- <h1>O HAI <?=strtoupper($screen_name)?></h1> -->
+<h2 class="form-head">Download Form Submissions</h2>
 <?=$action_table?>
+
+<h2 class="form-head">Form Statistics</h2>
 <?=$stats_table?>

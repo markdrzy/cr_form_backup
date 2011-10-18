@@ -1,3 +1,53 @@
-#form-stats {}
+#mainContent .pageContents #form-stats { width:580px;margin-bottom:40px }
+#form-stats th,
+#form-stats td { padding:8px }
+#form-stats .form-head {}
+#form-stats .form-head th {
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	background:#98aab5;
+	text-align:left;
+}
+#form-stats .date-head {}
+#form-stats .date-head th {
+	font-size:10px;
+	text-align:center;
+	background:#d7dde0;
+}
+#form-stats .form-stats {}
+#form-stats .form-stats th {
+	
+}
+#form-stats .form-stats td {
+	text-align:center;
+}
 
-#form-list {}
+
+#mainContent .pageContents #form-list { width:580px;margin-bottom:40px }
+#form-list thead th {
+	padding:8px;
+	background:#98AAB5;
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+}
+#form-list tbody td {
+	padding:8px;
+	font-size:12px;
+}
+
+.form-head {
+	margin-bottom:8px;
+}
+
+#dl-iframe {
+	position:absolute;
+	bottom:1px;
+	display:block;
+	border:0px;
+	width:1px;
+	height:1px;
+	visibility:hidden;
+}

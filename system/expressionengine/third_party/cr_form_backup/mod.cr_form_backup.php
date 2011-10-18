@@ -17,9 +17,6 @@ class Cr_form_backup {
 			include_once PATH_THIRD .'omnilog/classes/omnilogger' .EXT;
 		}
 		
-		// Load the custom CSS
-		$this->EE->cp->add_to_head('<link rel="stylesheet" src="/'.SYSDIR.'/expressionengine/third_party/cr_form_backup/css/style.css">');
-		
 		/*
 		// Grab settings from the MetaMod Table
 		$r = $this->EE->db->query("SELECT `mod_settings` FROM `{$this->EE->db->dbprefix}cr_module_meta` 
@@ -78,8 +75,9 @@ class Cr_form_backup {
 		
 		$r = $this->EE->db->query($q);
 		if ($r->num_rows() > 0) {
+			$ts = time();
 			header( 'Content-Type: text/csv' );
-			header( 'Content-Disposition: attachment;filename='.$action.'.csv');
+			header( 'Content-Disposition: attachment;filename='.$action.'-'.$ts.'.csv');
 			$fp = fopen('php://output', 'w');
 			foreach ($r->result_array() as $row)
 			{
