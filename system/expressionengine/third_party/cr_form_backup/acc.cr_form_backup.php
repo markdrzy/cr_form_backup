@@ -18,6 +18,11 @@ class Cr_form_backup_acc {
 		$this->EE =& get_instance();
 	}
 	
+	function set_sections()
+	{
+		return TRUE;
+	}
+	
 	function update()
 	{
 		return TRUE;

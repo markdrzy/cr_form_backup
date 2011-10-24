@@ -192,6 +192,7 @@ EOD;
 			
 		} else {
 		
+			$vars = array();
 			return $this->EE->load->view('index-empty', $vars, TRUE);
 		
 		}
