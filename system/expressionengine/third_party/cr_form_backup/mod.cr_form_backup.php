@@ -70,7 +70,6 @@ class Cr_form_backup {
 			$end_date = $ey.'-'.$em.'-'.$ed;
 		}
 		$q = "SELECT * FROM `{$this->EE->db->dbprefix}{$this->short_modname}` WHERE `action` = '{$action}'";
-		if ($start_date != '' && $end_date != '') $q .= " && `submitted_on` BETWEEN DATE('{$start_date}') AND DATE('{$end_date}')";
 		if ($start_date != '' && $end_date != '') $q .= " && `submitted_on` >= '{$start_date} 00:00:00' AND `submitted_on` <= '{$end_date} 23:59:59'";
 		$q .= " ORDER BY `submitted_on` ASC;";
 		
