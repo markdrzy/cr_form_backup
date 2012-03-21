@@ -7,7 +7,7 @@ require_once PATH_THIRD . 'cr_form_backup/mod.cr_form_backup' . EXT;
 
 class Cr_form_backup_upd {
 
-	var $version = '0.3.1';
+	var $version = '0.4';
 	var $modname = 'Cr_form_backup';
 	var $short_modname = 'cr_form_backup';
 	var $cr_form_backup;

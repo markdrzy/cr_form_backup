@@ -68,9 +68,10 @@ $action_table = $this->table->generate();
 $this->table->clear();
 
 ?>
-<!-- <h1>O HAI <?=strtoupper($screen_name)?></h1> -->
+<div id="cr-form-backup-index">
 <h2 class="form-head">Download Form Submissions</h2>
 <?=$action_table?>
 
 <h2 class="form-head">Form Statistics</h2>
 <?=$stats_table?>
+</div>
